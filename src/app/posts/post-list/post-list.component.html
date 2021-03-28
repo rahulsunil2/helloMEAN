@@ -1,6 +1,12 @@
-<mat-accordion>
-    <mat-expansion-panel>
-        <mat-expansion-panel-header>Expansion Panel 1</mat-expansion-panel-header>
-        <p>Expansion Panel Body</p>
+<mat-accordion *ngIf="posts.length > 0">
+    <mat-expansion-panel *ngFor="let post of posts">
+        <mat-expansion-panel-header>{{ post.title }}</mat-expansion-panel-header>
+        <p>{{ post.content }}</p>
+        <mat-action-row>
+            <button mat-button color="accent">EDIT</button>
+            <button mat-button color="warn">DELETE</button>
+        </mat-action-row>
     </mat-expansion-panel>
 </mat-accordion>
+
+<p class="mat-body-2 text-center" *ngIf="posts.length == 0">No posts added yet!</p>
