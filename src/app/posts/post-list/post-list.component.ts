@@ -1,7 +1,8 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Post } from '../post.model';
 import { PostsService } from '../posts.service';
+import {MatAccordion} from '@angular/material/expansion';
 
 @Component({
   selector: 'app-post-list',
@@ -9,6 +10,7 @@ import { PostsService } from '../posts.service';
   styleUrls: ['./post-list.component.css']
 })
 export class PostListComponent implements OnInit, OnDestroy {
+  @ViewChild(MatAccordion) accordion: MatAccordion;
 
   posts: Post[] = [];
   private PostsSub: Subscription;
