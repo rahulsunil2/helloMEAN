@@ -3,14 +3,6 @@ a {
     text-decoration: none;
 }
 
-a:active {
-    color: grey;
-}
-
-a:hover {
-    opacity: 0.75;
-}
-
 .spacer {
     flex: 1 1 auto;
 }
